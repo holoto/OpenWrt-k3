@@ -22,13 +22,13 @@
 
 # echo 'src-git small-package https://github.com/kenzok8/small-package' >> feeds.conf.default
 
-echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
+echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
 
-echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
+echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
 
 # src-git node https://github.com/nxhack/openwrt-node-packages.git;openwrt-18.06
 
-echo 'src-git node https://github.com/nxhack/openwrt-node-packages.git;openwrt-18.06' >> feeds.conf.default
+#echo 'src-git node https://github.com/nxhack/openwrt-node-packages.git;openwrt-18.06' >> feeds.conf.default
 
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
@@ -65,6 +65,6 @@ cat package/base-files/files/bin/config_generate |grep hostname=
 echo '=========Alert hostname OK!========='
 
 # Add cpufreq
-#rm -rf package/lean/luci-app-cpufreq
-#svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
-#ln -sf ../../../feeds/luci/applications/luci-app-cpufreq ./package/feeds/luci/luci-app-cpufreq
+rm -rf package/lean/luci-app-cpufreq
+svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
+ln -sf ../../../feeds/luci/applications/luci-app-cpufreq ./package/feeds/luci/luci-app-cpufreq
