@@ -61,9 +61,9 @@ echo '=========Remove other devices of bcm53xx OK!========='
 
 
 # echo '修改upnp绑定文件位置'
-# sed -i 's/\/var\/upnp.leases/\/tmp\/upnp.leases/g' feeds/packages/net/miniupnpd/files/upnpd.config
-# cat feeds/packages/net/miniupnpd/files/upnpd.config |grep upnp_lease_file
-# echo '=========Alert upnp binding file directory!========='
+sed -i 's/\/var\/upnp.leases/\/tmp\/upnp.leases/g' feeds/packages/net/miniupnpd/files/upnpd.config
+cat feeds/packages/net/miniupnpd/files/upnpd.config |grep upnp_lease_file
+echo '=========Alert upnp binding file directory!========='
 
 echo '修改主机名'
 sed -i "s/hostname='OpenWrt'/hostname='Phicomm-K3'/g" package/base-files/files/bin/config_generate
@@ -71,6 +71,6 @@ cat package/base-files/files/bin/config_generate |grep hostname=
 echo '=========Alert hostname OK!========='
 
 # Add cpufreq
-rm -rf package/lean/luci-app-cpufreq
-svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
-ln -sf ../../../feeds/luci/applications/luci-app-cpufreq ./package/feeds/luci/luci-app-cpufreq
+# rm -rf package/lean/luci-app-cpufreq
+# svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
+# ln -sf ../../../feeds/luci/applications/luci-app-cpufreq ./package/feeds/luci/luci-app-cpufreq
