@@ -57,10 +57,10 @@ sed -i 's/$(USB3_PACKAGES) k3screenctrl/luci-app-k3screenctrl/g' target/linux/bc
 echo '=========Remove other devices of bcm53xx OK!========='
 
 
-echo '修改upnp绑定文件位置'
-sed -i 's/\/var\/upnp.leases/\/tmp\/upnp.leases/g' feeds/packages/net/miniupnpd/files/upnpd.config
-cat feeds/packages/net/miniupnpd/files/upnpd.config |grep upnp_lease_file
-echo '=========Alert upnp binding file directory!========='
+# echo '修改upnp绑定文件位置'
+# sed -i 's/\/var\/upnp.leases/\/tmp\/upnp.leases/g' feeds/packages/net/miniupnpd/files/upnpd.config
+# cat feeds/packages/net/miniupnpd/files/upnpd.config |grep upnp_lease_file
+# echo '=========Alert upnp binding file directory!========='
 
 echo '修改主机名'
 sed -i "s/hostname='OpenWrt'/hostname='Phicomm-K3'/g" package/base-files/files/bin/config_generate
