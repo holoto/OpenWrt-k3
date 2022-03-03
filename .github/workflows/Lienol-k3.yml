@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: OpenWrt-k3test
+name: Lienol-k3
 
 on:
   repository_dispatch:
