@@ -22,16 +22,16 @@
 
 # echo 'src-git small-package https://github.com/kenzok8/small-package' >> feeds.conf.default
 
-#echo 'src-git kenzo https://github.com/kenzok8/small-package' >> feeds.conf.default
+echo 'src-git kenzo https://github.com/kenzok8/small-package' >> feeds.conf.default
 
-#echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
+echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
 
 # src-git node https://github.com/nxhack/openwrt-node-packages.git;openwrt-18.06
 
 #echo 'src-git node https://github.com/nxhack/openwrt-node-packages.git;openwrt-18.06' >> feeds.conf.default
 
-echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+#echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 # luci-theme-infinityfreedom
 #echo 'src-git infinityfreedom https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git' >>feeds.conf.default
 
