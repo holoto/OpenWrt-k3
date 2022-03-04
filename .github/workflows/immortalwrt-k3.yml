@@ -27,7 +27,8 @@ env:
 #   REPO_BRANCH: openwrt-21.02
 
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: k3-test.config
+#   CONFIG_FILE: k3-test.config
+  CONFIG_FILE: k3.config
   DIY_P1_SH: diy-part3.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -63,6 +64,8 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
+        sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.15/g' ./openwrt/target/linux/bcm53xx/Makefile
+        sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.15/g' /workdir/openwrt/target/linux/bcm53xx/Makefile
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     - name: Load custom feeds
       run: |
