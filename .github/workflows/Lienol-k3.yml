@@ -23,12 +23,12 @@ env:
  #REPO_URL: https://github.com/coolsnowwolf/lede
 #   REPO_URL: https://github.com/openwrt/openwrt
   REPO_URL: https://github.com/Lienol/openwrt
-#   REPO_BRANCH: main
-  REPO_BRANCH: 21.02
+  REPO_BRANCH: main
+#   REPO_BRANCH: 21.02
 
   FEEDS_CONF: feeds.conf.default
-#   CONFIG_FILE: k3-test.config
-  CONFIG_FILE: k3.config
+  CONFIG_FILE: k3-test.config
+#   CONFIG_FILE: k3.config
   DIY_P1_SH: diy-part3.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
