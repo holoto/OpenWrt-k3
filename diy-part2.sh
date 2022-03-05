@@ -20,3 +20,5 @@
 # sed -i '$a src-git small-package https://github.com/kenzok8/small-package' feeds.conf.default
 
 # sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+# delete all others bcm53xx spec
+sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm_k3|TARGET_DEVICES += phicomm_k3|' target/linux/bcm53xx/image/Makefile
