@@ -23,7 +23,7 @@
 # delete all others bcm53xx spec
 
 
-sed -i '$a src-git upx https://github.com/kuoruan/openwrt-upx.git' feeds.conf.default
+# sed -i '$a src-git upx https://github.com/kuoruan/openwrt-upx.git' feeds.conf.default
 
 #git clone https://github.com/kuoruan/openwrt-upx.git package/openwrt-upx
 
