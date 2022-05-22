@@ -25,7 +25,8 @@ env:
 #   REPO_URL: https://github.com/Lienol/openwrt
   REPO_URL: https://github.com/robimarko/openwrt
 #   REPO_BRANCH: master
-  REPO_BRANCH: ipq807x-5.15
+#   REPO_BRANCH: ipq807x-5.15
+  REPO_BRANCH: ipq807x-5.15-pr
 #   REPO_BRANCH: 21.02
 
   FEEDS_CONF: feeds.conf.default
