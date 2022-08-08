@@ -36,7 +36,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    timeout-minutes: 8000
+    timeout-minutes: 7200
 
     steps:
     - name: Checkout
