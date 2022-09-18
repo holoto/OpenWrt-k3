@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: k3-1015test
+name: robimarko-k3-kernel5_15
 
 on:
   repository_dispatch:
