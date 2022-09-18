@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Lienol-k3
+name: Lede-k3-kernel5_15
 
 on:
   repository_dispatch:
@@ -20,16 +20,11 @@ on:
         default: 'false'
 
 env:
- #REPO_URL: https://github.com/coolsnowwolf/lede
-#   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_URL: https://github.com/Lienol/openwrt
+  REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-#   REPO_BRANCH: 22.03
-
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: k3-kernel5_10.config
-#   CONFIG_FILE: k3.config
-  DIY_P1_SH: diy-part3.sh
+  DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
@@ -64,6 +59,8 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
+        #sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.15/g' ./openwrt/target/linux/bcm53xx/Makefile
+        #sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.15/g' /workdir/openwrt/target/linux/bcm53xx/Makefile
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     - name: Load custom feeds
       run: |
@@ -117,7 +114,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
-        name: LienolOpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: ledeOpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: openwrt/bin
 
     - name: Organize files
@@ -132,7 +129,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: LienolOpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: ledeOpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
     - name: Upload firmware to cowtransfer
@@ -166,7 +163,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: Lienol-k3${{ steps.tag.outputs.release_tag }}
+        tag_name: lede-k3${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
