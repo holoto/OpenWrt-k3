@@ -31,7 +31,7 @@ env:
 
   FEEDS_CONF: feeds.conf.default
 #  CONFIG_FILE: k3-test.config
-  CONFIG_FILE: k3-kernel5_15.config
+  CONFIG_FILE: k3-kernel6_1.config
 
 #   CONFIG_FILE: k3.config
   DIY_P1_SH: diy-part3.sh
