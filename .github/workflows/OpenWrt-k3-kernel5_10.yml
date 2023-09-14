@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: OpenWrt-k3-kernel5_10
+name: OpenWrt-k3-kernel5_15
 
 on:
   repository_dispatch:
@@ -26,7 +26,7 @@ env:
   REPO_BRANCH: master
 #   REPO_BRANCH: openwrt-22.03
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: k3-kernel5_10.config
+  CONFIG_FILE: k3-kernel5_15.config
 #   CONFIG_FILE: k3.config
   DIY_P1_SH: diy-part3.sh
   DIY_P2_SH: diy-part2.sh
