@@ -24,7 +24,7 @@ env:
 #   REPO_URL: https://github.com/openwrt/openwrt
 #   REPO_URL: https://github.com/Lienol/openwrt
   REPO_URL: https://github.com/robimarko/openwrt
-   REPO_BRANCH: master
+  REPO_BRANCH: master
 #   REPO_BRANCH: ipq807x-5.15
  # REPO_BRANCH: ipq807x-5.15-pr
 #   REPO_BRANCH: 21.02
@@ -176,7 +176,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: k3-10.15test${{ steps.tag.outputs.release_tag }}
+        tag_name: robimarko${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
