@@ -43,7 +43,11 @@ echo 'src-git upx https://github.com/kuoruan/openwrt-upx.git' >>feeds.conf.defau
 #echo 'src-git node https://github.com/nxhack/openwrt-node-packages.git;openwrt-18.06' >> feeds.conf.default
 
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+
+
+echo 'src-git passwall https://github.com/fantastic-packages/packages.git' >>feeds.conf.default
+
 # luci-theme-infinityfreedom
 # echo 'src-git infinityfreedom https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git' >>feeds.conf.default
 
