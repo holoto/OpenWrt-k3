@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: immortalwrt-k3-kernel6_1
+name: immortalwrt-k3-kernel6_6
 
 on:
   repository_dispatch:
@@ -27,7 +27,7 @@ env:
 #   REPO_BRANCH: openwrt-21.02
 
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: k3-kernel6_1.config
+  CONFIG_FILE: k3-kernel6_6.config
 #   CONFIG_FILE: k3.config
   DIY_P1_SH: diy-part3.sh
   DIY_P2_SH: diy-part2.sh
