@@ -24,7 +24,7 @@
 
 echo 'src-git kenzo https://github.com/kenzok8/small-package' >> feeds.conf.default
 
-echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages' >> feeds.conf.default
+echo 'src-git kwrt-packages https://github.com/kiddin9/kwrt-packages' >> feeds.conf.default
 
 echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
 
@@ -37,8 +37,8 @@ echo 'src-git upx https://github.com/kuoruan/openwrt-upx.git' >>feeds.conf.defau
 
 #echo 'src-git node https://github.com/nxhack/openwrt-node-packages.git;openwrt-18.06' >> feeds.conf.default
 
-echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+# echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 # luci-theme-infinityfreedom
 # echo 'src-git infinityfreedom https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git' >>feeds.conf.default
 
@@ -62,16 +62,22 @@ echo '=========Remove other devices of bcm53xx OK!========='
 
 
 echo '修改upnp绑定文件位置'
-sed -i 's/\/var\/upnp.leases/\/tmp\/upnp.leases/g' feeds/packages/net/miniupnpd/files/upnpd.config
-cat feeds/packages/net/miniupnpd/files/upnpd.config |grep upnp_lease_file
-echo '=========Alert upnp binding file directory!========='
+# sed -i 's/\/var\/upnp.leases/\/tmp\/upnp.leases/g' feeds/packages/net/miniupnpd/files/upnpd.config
+# cat feeds/packages/net/miniupnpd/files/upnpd.config |grep upnp_lease_file
+# echo '=========Alert upnp binding file directory!========='
 
 echo '修改主机名'
-sed -i "s/hostname='OpenWrt'/hostname='Phicomm-K3'/g" package/base-files/files/bin/config_generate
-cat package/base-files/files/bin/config_generate |grep hostname=
-echo '=========Alert hostname OK!========='
+# sed -i "s/hostname='OpenWrt'/hostname='Phicomm-K3'/g" package/base-files/files/bin/config_generate
+# cat package/base-files/files/bin/config_generate |grep hostname=
+# echo '=========Alert hostname OK!========='
+
+# 修改默认IP
+sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
 
 # Add cpufreq
 #rm -rf package/lean/luci-app-cpufreq
 #svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
 #ln -sf ../../../feeds/luci/applications/luci-app-cpufreq ./package/feeds/luci/luci-app-cpufreq
+
+
+git clone --depth=1  https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
